@@ -52,5 +52,5 @@ ggplot(datos, aes(x = factor(geno), y = lfa , fill = factor(riego))) +
 
 
 # fIN PRACTICA POR EL MOMENTO
-
+# Yoel Díaz Saucedo
 

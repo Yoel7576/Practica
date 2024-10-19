@@ -1,0 +1,56 @@
+---
+title: "Practica"
+author: "Yoel Díaz Saucedo"
+format: 
+  html:
+    toc: true
+    toc-location: left
+    embed-resources: true
+    number-sections: true
+    output-file: index
+    theme: darkly
+editor_options: 
+  chunk_output_type: console
+---
+
+# Mi página web"
+
+1.  Tener mi proyecto
+1.  Conectar mi proyecto a GitHub
+1.  Tener un archivo html llamado "index.html"
+1.  Hacer push al reopositorio
+1.  Crear GitHub pages
+
+# Análisis de datos
+
+## Importar datos
+
+```{r}
+datos <- read.csv(file = "LA MOLINA 2014 POTATO WUE (FB) - fb.csv" , header = TRUE, sep = ",")
+```
+
+# Modelo lineal
+```{r}
+model <- lm(formula = lfa ~ bloque + geno + riego + riego*geno, data = datos)
+
+anova(model)
+```
+
+# Boxplot (gráfica)
+```{r}
+library(ggplot2)
+ggplot(datos, aes(x = factor(geno), y = lfa , fill = factor(riego))) +
+  geom_boxplot() +
+  labs(title = "Boxplot de LFA por Genotipo y Riego" , 
+       x = "genotipo" , 
+       y = "LFA" , 
+       fill = "riego") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+```
+
+
+# fIN PRACTICA POR EL MOMENTO
+
+
